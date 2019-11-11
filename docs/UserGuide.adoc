@@ -859,6 +859,9 @@ Format: `deleteReminder`
 Restores the finance tracker to the state before the previous undoable command was executed or
 before the specified number of undoable commands were executed.
 
+[NOTE]
+`undo` is not executable for Statistics and UI commands.
+
 Format: `undo` `undo <step>`
 
 * `<step>`: The number of commands to undo. Additionally the step must be greater than zero and positive.
