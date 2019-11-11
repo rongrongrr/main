@@ -436,17 +436,17 @@ Format: `addBudget cat/<category name> n/<description> amt/<budget amount> d/<st
 Note: format for inputting period is <number><d/m/y> where d/m/y stands for days / months / years respectively
 e.g. for a period input of 10 days, use 10d
 
-<category name>: The category that this budget belongs to.
+* `<category name>`: The category that this budget belongs to.
 
-<description>: The name of this budget.
+* `<description>`: The name of this budget.
 
-<budget amount>: The amount set for this budget. It can contain at most 2 decimal points.
+* `<budget amount>`: The amount set for this budget. It can contain at most 2 decimal points.
 
-<start date>: The starting date of this budget.
+* `<start date>`: The starting date of this budget.
 
-<period>: The time period for which the budget is valid for. It can be in the form of either days, months, or years. Refer to example given in format.
+* `<period>`: The time period for which the budget is valid for. It can be in the form of either days, months, or years. Refer to example given in format.
 
-<tag>: Optional tags for this expense. The tag must not have spaces and most only be alphanumeric.
+* `<tag>`: Optional tags for this expense. The tag must not have spaces and most only be alphanumeric.
 
 Example Usage:
 [start = 1]
@@ -858,6 +858,7 @@ Deletes the selected Reminder.
 
 Format: `deleteReminder`
 // end::reminders[]
+
 === Undo/Redo
 ==== Undo previous command : `undo`
 Restores the finance tracker to the state before the previous undoable command was executed or
@@ -870,7 +871,8 @@ Format: `undo` `undo <step>`
 
 * `<step>`: The number of commands to undo. Additionally the step must be greater than zero and positive.
 * `undo <step>` is only executed if the number of undoable commands is more than or equal to `<step>`.
-* [NOTE] `undo 1` has the same function as `undo`.
+[NOTE]
+`undo 1` has the same function as `undo`.
 
 Example Usage:
 [start = 1]
@@ -900,11 +902,16 @@ Other examples:
 ==== Redo previously undone command : `redo`
 Reverses the most recent undone command or the specified number of most recent undone commands.
 
+[NOTE]
+As `undo` is not executable for Statistics and UI commands, `redo` is not executable
+for those commands as well.
+
 Format: `redo` `redo <step>`
 
 * `<step>`: The number of undone commands to redo. Additionally the step must be greater than zero and positive.
 * `redo <step>` is only executed if the number of redoable commands is more than or equal to `<step>`.
-* [NOTE] `redo 1` has the same function as `redo`.
+[NOTE]
+`redo 1` has the same function as `redo`.
 
 Example Usage:
 [start = 1]
@@ -953,7 +960,8 @@ Displays the list of commands entered, from most recent to earliest.
 
 Format: `history`
 
-* [NOTE] `history` can only be executed if there were commands already entered before trying to use `history`.
+[NOTE]
+`history` can only be executed if there were commands already entered before trying to use `history`.
 
 Example Usage:
 [start = 1]
